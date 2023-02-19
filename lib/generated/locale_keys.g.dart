@@ -7,5 +7,6 @@ abstract class  LocaleKeys {
   static const label_hello_world = 'label_hello_world';
   static const button_display_weather = 'button_display_weather';
   static const text_field_city = 'text_field_city';
+  static const label_welcome = 'label_welcome';
 
 }
