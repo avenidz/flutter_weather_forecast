@@ -4,7 +4,8 @@ import 'package:flutter_weather_forecast/generated/locale_keys.g.dart';
 import 'package:flutter_weather_forecast/resources/colors.dart';
 
 class AppTextField extends StatefulWidget {
-  const AppTextField({Key? key}) : super(key: key);
+  const AppTextField({Key? key, this.controller}) : super(key: key);
+  final TextEditingController? controller;
 
   @override
   State<AppTextField> createState() => _AppTextFieldState();
@@ -14,6 +15,7 @@ class _AppTextFieldState extends State<AppTextField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      controller: widget.controller,
       decoration: InputDecoration(
         prefixIcon: const Icon(Icons.search),
         hintText: LocaleKeys.text_field_city.tr(),

@@ -6,4 +6,5 @@ import 'package:stacked_services/stacked_services.dart';
 class AppBaseViewModel extends BaseViewModel {
   final navigationService = locator<NavigationService>();
   final apiServices = locator<ApiServices>();
+  final snackBarServices = locator<SnackbarService>();
 }

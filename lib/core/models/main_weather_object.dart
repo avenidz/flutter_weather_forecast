@@ -7,6 +7,7 @@ class MainWeatherObject extends Equatable {
   final int? humidity;
   final String? description;
   final String? main;
+  final int? date;
 
   const MainWeatherObject({
     this.cityName,
@@ -15,6 +16,7 @@ class MainWeatherObject extends Equatable {
     this.humidity,
     this.description,
     this.main,
+    this.date,
   });
 
   factory MainWeatherObject.fromJson(Map<String, dynamic> json) {
@@ -27,16 +29,10 @@ class MainWeatherObject extends Equatable {
       humidity: main['humidity'],
       description: weather[0]['description'],
       main: weather[0]['main'],
+      date: json['dt'],
     );
   }
 
   @override
-  List<Object?> get props => [
-        cityName,
-        temperature,
-        pressure,
-        humidity,
-        description,
-        main,
-      ];
+  List<Object?> get props => [cityName, temperature, pressure, humidity, description, main, date];
 }

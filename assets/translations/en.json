@@ -5,5 +5,14 @@
   "label_hello_world": "Hello World",
   "button_display_weather": "Display Weather",
   "text_field_city": "City",
-  "label_welcome": "Hi there! Welcome to our new Weather App."
+  "label_welcome": "Hi there! Welcome to our new Weather App.",
+  "error_empty_field": "Empty Fields",
+  "table_date": "Date",
+  "table_temp": "Temperature",
+  "table_description": "Description",
+  "table_main": "Main",
+  "table_pressure": "Pressure",
+  "table_humidity": "Humidity",
+  "label_location": "Location",
+  "label_country": "Country"
 }
