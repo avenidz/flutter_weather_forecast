@@ -20,6 +20,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return ViewModelBuilder<HomePageViewModel>.reactive(
         viewModelBuilder: () => HomePageViewModel(),
+        onViewModelReady: (model) => model.init(),
         builder: (context, model, child) {
           return Scaffold(
             body: SafeArea(child: homePageView(model)),
