@@ -6,11 +6,14 @@
 
 // ignore_for_file: no_leading_underscores_for_library_prefixes
 import 'package:flutter/material.dart';
-import 'package:flutter_weather_forecast/ui/login_view/login_view.dart' as _i3;
 import 'package:flutter_weather_forecast/ui/views/home_page/home_page.dart'
     as _i2;
+import 'package:flutter_weather_forecast/ui/views/login_view/login_view.dart'
+    as _i3;
+import 'package:stacked/src/code_generation/router_annotation/transitions_builders.dart'
+    as _i4;
 import 'package:stacked/stacked.dart' as _i1;
-import 'package:stacked_services/stacked_services.dart' as _i4;
+import 'package:stacked_services/stacked_services.dart' as _i5;
 
 class Routes {
   static const HomePage = '/home-page';
@@ -41,10 +44,7 @@ class StackedRouter extends _i1.RouterBase {
         pageBuilder: (context, animation, secondaryAnimation) =>
             const _i2.HomePage(),
         settings: data,
-        transitionsBuilder: data.transition ??
-            (context, animation, secondaryAnimation, child) {
-              return child;
-            },
+        transitionsBuilder: data.transition ?? _i4.TransitionsBuilders.fadeIn,
       );
     },
     _i3.LoginView: (data) {
@@ -66,7 +66,7 @@ class StackedRouter extends _i1.RouterBase {
   Map<Type, _i1.StackedRouteFactory> get pagesMap => _pagesMap;
 }
 
-extension NavigatorStateExtension on _i4.NavigationService {
+extension NavigatorStateExtension on _i5.NavigationService {
   Future<dynamic> navigateToHomePage([
     int? routerId,
     bool preventDuplicates = true,
