@@ -3,5 +3,6 @@
   "button_login": "Login",
   "button_logout": "Logout",
   "label_hello_world": "Hello World",
-  "button_display_weather": "Display Weather"
+  "button_display_weather": "Display Weather",
+  "text_field_city": "City"
 }
