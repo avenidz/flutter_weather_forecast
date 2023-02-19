@@ -1,5 +1,6 @@
-import 'package:flutter/cupertino.dart';
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_weather_forecast/generated/locale_keys.g.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -17,6 +18,20 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget homePageBody() {
-    return const Text('ok');
+    return SingleChildScrollView(
+      child: Column(
+        children: [homePageAppBar()],
+      ),
+    );
+  }
+
+  Widget homePageAppBar() {
+    return Container(
+      padding: const EdgeInsets.all(10),
+      child: Text(
+        LocaleKeys.app_name.tr(),
+        style: const TextStyle(fontSize: 25),
+      ),
+    );
   }
 }
