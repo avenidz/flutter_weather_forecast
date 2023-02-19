@@ -1,36 +1,42 @@
 import 'package:equatable/equatable.dart';
 
 class MainWeatherObject extends Equatable {
-  final String? areaLocated;
-  final String? date;
-  final double? temp;
-  final double? pressure;
-  final double? humidity;
-  final List<String>? weatherDescription;
-  
+  final String? cityName;
+  final double? temperature;
+  final int? pressure;
+  final int? humidity;
+  final String? description;
+  final String? main;
+
   const MainWeatherObject({
-    this.areaLocated,
-    this.date,
-    this.temp,
+    this.cityName,
+    this.temperature,
     this.pressure,
     this.humidity,
-    this.weatherDescription,
-});
-  
+    this.description,
+    this.main,
+  });
+
   factory MainWeatherObject.fromJson(Map<String, dynamic> json) {
+    var weather = json['weather'] as List;
+    var main = json['main'];
     return MainWeatherObject(
-      areaLocated: json['areaLocated'] as String,
-      date: json['dt'] as String,
-      temp: json['temp'] as double,
-      pressure: json['pressure'] as double,
-      humidity: json['humidity'] as double,
-      weatherDescription: json['weather'] as List<String>,
+      cityName: json['name'],
+      temperature: main['temp'],
+      pressure: main['pressure'],
+      humidity: main['humidity'],
+      description: weather[0]['description'],
+      main: weather[0]['main'],
     );
   }
 
   @override
   List<Object?> get props => [
-    areaLocated, date, temp, pressure, humidity, weatherDescription,
-  ];
-  
+        cityName,
+        temperature,
+        pressure,
+        humidity,
+        description,
+        main,
+      ];
 }
